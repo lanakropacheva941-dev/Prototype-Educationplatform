@@ -1,9 +1,2 @@
-export default function Page() {
-  return (
-    <div>
-      <p className="text-sm text-muted-foreground">Раздел платформы</p>
-      <h1 className="mt-1 text-3xl font-semibold">Курсы</h1>
-      <p className="mt-4 text-muted-foreground">Страница подготовлена для следующего этапа разработки.</p>
-    </div>
-  );
-}
+import Link from "next/link";import {BookOpen,CheckSquare,Clock3,Glasses} from "lucide-react";
+export default function CoursesPage(){return <div className="space-y-4"><div><h1 className="text-2xl font-bold">Курсы</h1><p className="text-sm text-muted-foreground">Структурированные программы обучения</p></div><div className="flex gap-2">{["Мои курсы","Все курсы","Доступные","Завершённые"].map((x,i)=><button key={x} className={i===0?"rounded-lg bg-[#dff7f7] px-5 py-2 text-xs font-semibold text-primary":"rounded-lg bg-[#eaf2f5] px-5 py-2 text-xs text-[#49627e]"}>{x}</button>)}</div><section className="overflow-hidden rounded-xl border border-border bg-white"><div className="grid lg:grid-cols-[270px_1fr]"><div className="grid min-h-52 place-items-center bg-gradient-to-br from-[#b8edef] via-white to-[#dce9ec]"><Glasses size={100} className="text-[#3d7180]"/></div><div className="p-5"><h2 className="text-xl font-bold">Продавец-консультант оптики</h2><p className="mt-1 text-sm text-muted-foreground">Полный курс для новых сотрудников</p><div className="mt-4 flex flex-wrap gap-4 text-xs text-muted-foreground"><span className="flex gap-2"><BookOpen size={15}/>8 модулей</span><span className="flex gap-2"><CheckSquare size={15}/>28 материалов</span><span className="flex gap-2"><Clock3 size={15}/>7 тестов</span></div><div className="mt-5 flex items-center gap-4"><div className="h-2 flex-1 overflow-hidden rounded-full bg-[#dfecef]"><div className="h-full w-[74%] bg-primary"/></div><b className="text-xs">74%</b><Link href="/learning-path" className="rounded-lg bg-primary px-5 py-2 text-xs font-semibold text-white">Продолжить обучение</Link></div></div></div></section><div className="grid gap-3 md:grid-cols-3">{["Основы оптики","Очковые линзы","Работа с клиентом"].map((x,i)=><article key={x} className="rounded-xl border border-border bg-white p-4"><BookOpen className="text-primary" size={20}/><b className="mt-3 block text-sm">{x}</b><p className="mt-1 text-xs text-muted-foreground">{4+i} материала · {i+1} тест</p></article>)}</div></div>}
