@@ -5,12 +5,12 @@
 - [x] Создать ветку develop
 - [x] Зафиксировать архитектуру, sitemap, роли и roadmap
 - [x] Добавить .env.example
-- [ ] Инициализировать Next.js + TypeScript
-- [ ] Подключить Tailwind CSS
-- [ ] Подключить shadcn/ui
-- [ ] Настроить ESLint/Prettier
-- [ ] Создать src/app, components, features, lib, types, mock-data
-- [ ] Добавить базовые design tokens
+- [x] Инициализировать Next.js + TypeScript
+- [x] Подключить Tailwind CSS
+- [x] Подключить shadcn/ui
+- [x] Настроить ESLint/Prettier
+- [x] Создать src/app, components, features, lib, types, mock-data
+- [x] Добавить базовые design tokens
 - [ ] Проверить npm run dev / lint / build
 
 ## Этап 1 — UI Shell
