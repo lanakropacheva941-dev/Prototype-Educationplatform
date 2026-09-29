@@ -1,9 +1,3 @@
-export default function Page() {
-  return (
-    <div>
-      <p className="text-sm text-muted-foreground">Раздел платформы</p>
-      <h1 className="mt-1 text-3xl font-semibold">Как пользоваться платформой</h1>
-      <p className="mt-4 text-muted-foreground">Страница подготовлена для следующего этапа разработки.</p>
-    </div>
-  );
-}
+import {BarChart3,BookOpenCheck,HelpCircle,Medal,RefreshCw,Search,Video} from "lucide-react";
+const cards=[[Search,"Как найти материал","Поиск, фильтры, категории"],[BookOpenCheck,"Как пройти курс","Последовательность обучения"],[BookOpenCheck,"Как пройти тест","Перед тестом и правила"],[BarChart3,"Как посмотреть результат","Где смотреть прогресс и баллы"],[RefreshCw,"Как повторно пройти","Повторное прохождение материалов"],[HelpCircle,"Куда сообщить об ошибке","Исправление проблем"],[Medal,"Как работает рейтинг","Баллы, уровни и мотивация"],[Video,"Видеоинструкция","Короткий ролик о возможностях платформы"]];
+export default function GuidePage(){return <div className="space-y-5"><section className="relative overflow-hidden rounded-xl border border-border bg-white p-5"><div className="absolute right-0 top-0 h-full w-2/5 bg-gradient-to-bl from-[#8be2e7] to-transparent"/><h1 className="relative text-2xl font-bold">Как пользоваться платформой</h1><p className="relative mt-1 text-sm text-muted-foreground">Краткие инструкции для комфортного обучения</p></section><div className="grid gap-3 sm:grid-cols-2 xl:grid-cols-4">{cards.map(([Icon,title,desc])=>{const I=Icon as typeof Search;return <article key={String(title)} className="rounded-xl border border-border bg-white p-4"><span className="grid h-11 w-11 place-items-center rounded-lg bg-[#e4f8f8] text-primary"><I size={23}/></span><h2 className="mt-3 text-sm font-bold">{String(title)}</h2><p className="mt-1 text-xs text-muted-foreground">{String(desc)}</p></article>})}</div><section className="rounded-xl border border-border bg-white p-5"><h2 className="font-bold">Популярные инструкции</h2><div className="mt-3 divide-y divide-border">{["Начало работы на платформе","Как устроен учебный маршрут","Что делать, если тест не пройден"].map((x,i)=><div key={x} className="flex items-center gap-3 py-3"><span className="grid h-8 w-8 place-items-center rounded-lg bg-surface-muted text-xs font-bold text-primary">{i+1}</span><span className="text-sm">{x}</span></div>)}</div></section></div>}
