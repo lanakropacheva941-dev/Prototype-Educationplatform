@@ -1,0 +1,12 @@
+import Link from "next/link";
+
+const prototypeTestIds = ["test-objections"];
+
+export function generateStaticParams() {
+  return prototypeTestIds.map((id) => ({ id }));
+}
+
+export default async function TestInfoPage({ params }: { params: Promise<{ id: string }> }) {
+  const { id } = await params;
+  return <div className="mx-auto max-w-3xl"><p className="text-sm text-muted-foreground">Тестирование · {id}</p><h1 className="mt-1 text-3xl font-semibold">Работа с возражениями</h1><section className="mt-6 rounded-2xl border border-border bg-surface p-6"><h2 className="font-semibold">Перед началом</h2><div className="mt-4 grid gap-3 text-sm sm:grid-cols-2"><p>Проходной результат: <strong>90%</strong></p><p>Попыток в сессии: <strong>2</strong></p><p>Время на вопрос: <strong>30 сек.</strong></p><p>Правильные ответы: <strong>не показываются</strong></p></div><p className="mt-5 text-sm text-muted-foreground">Полноценная тестовая сессия, таймер и журнал нарушений будут подключены в модуле тестирования.</p><Link href="/tests" className="mt-6 inline-block rounded-xl bg-primary px-4 py-2.5 text-sm font-semibold text-primary-foreground">К списку тестов</Link></section></div>;
+}
