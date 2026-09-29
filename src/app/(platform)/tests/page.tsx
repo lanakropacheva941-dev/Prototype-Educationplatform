@@ -1,9 +1,3 @@
-export default function Page() {
-  return (
-    <div>
-      <p className="text-sm text-muted-foreground">Раздел платформы</p>
-      <h1 className="mt-1 text-3xl font-semibold">Тестирование</h1>
-      <p className="mt-4 text-muted-foreground">Страница подготовлена для следующего этапа разработки.</p>
-    </div>
-  );
-}
+import Link from "next/link";import {CheckCircle2,Clock3,FileText} from "lucide-react";
+const tests=[["Основы оптики","15 вопросов · 20 минут","до 30.09.2026"],["Стандарты обслуживания","15 вопросов · 15 минут","до 30.09.2026"],["Тест по технике продаж","15 вопросов · 20 минут","до 15.10.2026"],["Итоговый тест продавца-консультанта","30 вопросов · 40 минут","до 30.10.2026"]];
+export default function TestsPage(){return <div className="space-y-4"><div><h1 className="text-2xl font-bold">Тестирование</h1><p className="text-sm text-muted-foreground">Проверьте знания и закрепите материал</p></div><div className="flex flex-wrap gap-2">{["Назначенные","Доступные","Пройденные","Повторное тестирование","Итоговые"].map((x,i)=><button key={x} className={i===0?"rounded-lg bg-primary px-5 py-2 text-xs font-semibold text-white":"rounded-lg bg-[#eaf2f5] px-5 py-2 text-xs text-[#49627e]"}>{x}</button>)}</div><section className="space-y-2">{tests.map(([title,meta,due],i)=><div key={title} className="flex flex-col gap-3 rounded-xl border border-border bg-white p-4 sm:flex-row sm:items-center"><span className="grid h-10 w-10 place-items-center rounded-lg bg-[#e6f8f8] text-primary"><FileText size={20}/></span><div className="flex-1"><b className="text-sm">{title}</b><p className="mt-1 text-xs text-muted-foreground">{meta}</p></div><span className="flex items-center gap-1 text-xs text-danger"><Clock3 size={14}/>{due}</span><span className="rounded-lg bg-[#ffecee] px-3 py-1 text-[10px] text-danger">Не пройден</span><Link href="/tests/test-objections" className="rounded-lg border border-primary px-4 py-2 text-xs font-semibold text-primary">Пройти</Link></div>)}</section><div className="rounded-xl border border-border bg-white p-4 text-xs text-muted-foreground"><CheckCircle2 className="mb-2 text-primary" size={20}/>Для обязательных тестов проходной результат и число попыток определяются настройками теста.</div></div>}
