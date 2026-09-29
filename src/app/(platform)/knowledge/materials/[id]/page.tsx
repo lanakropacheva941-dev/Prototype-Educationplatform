@@ -3,6 +3,10 @@ import { notFound } from "next/navigation";
 import { ArrowRight, Bookmark, CircleAlert } from "lucide-react";
 import { materials } from "@/mock-data/materials";
 
+export function generateStaticParams() {
+  return Object.keys(materials).map((id) => ({ id }));
+}
+
 export default async function MaterialPage({ params }: { params: Promise<{ id: string }> }) {
   const { id } = await params;
   const material = materials[id as keyof typeof materials];
